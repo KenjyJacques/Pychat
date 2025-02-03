@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur Python</title>
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/dracula.min.css">
+
+    <!-- Styles CSS personnalisés -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Éditeur Python</h1>
+        <!-- Zone d'édition avec CodeMirror -->
+        <textarea id="code" placeholder="Écrivez votre code Python ici..."></textarea>
+        <button onclick="executeCode()">Exécuter</button>
+
+        <!-- Zone de console interactive -->
+        <h2>Console</h2>
+        <div id="console-output"></div>
+    </div>
+
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/closebrackets.min.js"></script>
+
+    <!-- Script JS personnalisé -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- Initialisation de CodeMirror -->
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            lineNumbers: true,
+            mode: "python",
+            theme: "dracula",
+            autoCloseBrackets: true,
+            indentUnit: 4
+        });
+    </script>
+</body>
+</html>

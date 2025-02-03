@@ -1,0 +1,46 @@
+# Instructions pour exécuter l'éditeur Python en local
+
+## Prérequis
+Avant de commencer, assurez-vous d'avoir installé :
+- **Python** (version 3.8 ou plus) : Téléchargeable depuis [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- **pip** (généralement inclus avec Python)
+
+## Étapes d'installation et d'exécution
+
+### 1. Télécharger et extraire le projet
+- Récupérez le fichier **projet-python-editor.zip**.
+- Extrayez-le dans un dossier de votre choix.
+
+### 2. Installer les dépendances
+Ouvrez un terminal (cmd sous Windows ou Terminal sous macOS/Linux) et naviguez jusqu'au dossier du projet :
+```bash
+cd chemin/vers/projet-python-editor
+```
+Ensuite, installez Flask avec la commande suivante :
+```bash
+pip install flask
+```
+
+### 3. Lancer le serveur local
+Dans le même terminal, exécutez la commande :
+```bash
+python app.py
+```
+Si Python 2 est installé en parallèle de Python 3, utilisez :
+```bash
+python3 app.py
+```
+
+### 4. Accéder au site
+Une fois le serveur lancé, ouvrez votre navigateur et entrez l'URL suivante :
+```
+http://127.0.0.1:5000/
+```
+
+Vous pouvez maintenant utiliser l'éditeur Python dans votre navigateur !
+
+### 5. Résolution des problèmes
+Si vous rencontrez des erreurs :
+- Assurez-vous que Flask est bien installé (`pip install flask`).
+- Vérifiez que vous utilisez bien Python 3.
+- Redémarrez le terminal et relancez `python app.py`.
